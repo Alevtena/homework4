@@ -22,7 +22,7 @@ Console.WriteLine(Stepen(osnovanie, pokazatel));
 // 82 -> 10
 // 9012 -> 12
 
-int SumDigits(int n)
+/* int SumDigits(int n)
 {
     int sum = 0; 
     int count = 0;
@@ -38,3 +38,40 @@ int SumDigits(int n)
 Console.Write("Input a number"+" ");
 int number = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(SumDigits(number));
+*/
+
+// Task 3. Напишите программу, которая задаёт массив из m элементов и выводит их на экран. Разработать метод CreateArray(int size), генерирующий массив на основе данных, вводимых пользователем.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
+int InPut (string message) // метод ввода информации о массиве (его размер и ввод элементов массива)
+{
+    Console.WriteLine(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int[] CreateArray(int size)
+{
+    int[]array = new int [size];
+    for(int i=0; i < size; i++)
+    array[i] = InPut($"Введите число массива под индексом {i}");
+    
+    return array;
+
+}
+
+void ShowArray(int[] array)
+{
+    for(int i=0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+
+}
+
+int length = InPut ("Введите количество элементов в массиве");
+
+int[] myArray  = CreateArray(length);
+ShowArray(myArray);
+
